@@ -13,13 +13,18 @@ RUN set -x \
         python \
         tar
 
-RUN git clone https://github.com/Camiloruiiz/webpack-gulp4.git app
-#ADD ./app /app
+RUN npm install gulp-cli -g
+
 WORKDIR /app
 
-RUN npm install gulp-cli -g \
-    && npm install
+RUN git clone https://github.com/Camiloruiiz/webpack-gulp4.git app
 
-VOLUME ["./:/apps"]
+#ADD ./app /app
+
+WORKDIR /app/app
+
+RUN npm install
+
+#VOLUME /app
 
 CMD ["npm", "run", "dev"]
