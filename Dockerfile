@@ -21,5 +21,5 @@ RUN npm install gulp-cli -g \
     && npm install
 
 VOLUME ["./:/apps"]
-services:
+
 CMD ["npm", "run", "dev"]
