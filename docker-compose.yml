@@ -1,5 +1,9 @@
 version: "2"
 
+volumes:
+  node_modules:
+    driver: local
+
 services:  
   web:
     build: ./
@@ -8,7 +12,5 @@ services:
     ports: 
       - "3000:3000"
       - "3001:3001"
-    command: npm run dev
     volumes:
-      - ./app:/app
-      - ./ap:/app/modules
+       - ./:/opt

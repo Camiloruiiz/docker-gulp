@@ -15,16 +15,15 @@ RUN set -x \
 
 RUN npm install gulp-cli -g
 
-WORKDIR /app
+ADD startup.sh /
+RUN chmod +x /startup.sh
 
-RUN git clone https://github.com/Camiloruiiz/webpack-gulp4.git app
+WORKDIR /opt
 
-#ADD ./app /app
+#RUN mkdir /app
 
-WORKDIR /app/app
+#RUN npm install
 
-RUN npm install
+#VOLUME /opt
 
-#VOLUME /app
-
-CMD ["npm", "run", "dev"]
+CMD ["/bin/sh", "/startup.sh"]
