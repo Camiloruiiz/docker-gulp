@@ -1,17 +1,11 @@
 sudo: required
-
-language: javascript
+nguage: javascript
 
 services:
     - docker
 
 before_install:
-    - docker build -t mkenney/npm:latest .
-    - cd test
+    - docker build -t camiloruiiz/gulp:latest .
 
 script:
-    - docker run --rm -t -i -v $(pwd):/src:rw mkenney/npm:latest /run-as-user /usr/local/bin/node --version
-    - docker run --rm -t -i -v $(pwd):/src:rw mkenney/npm:latest /run-as-user /usr/local/bin/npm install
-    - docker run --rm -t -i -v $(pwd):/src:rw mkenney/npm:latest /run-as-user /usr/local/bin/bower install
-    - docker run --rm -t -i -v $(pwd):/src:rw mkenney/npm:latest /run-as-user /usr/local/bin/grunt
-    - docker run --rm -t -i -v $(pwd):/src:rw mkenney/npm:latest /run-as-user /usr/local/bin/gulp
+    - docker run -d -v $(pwd):/opt camiloruiiz/gulp:latest
