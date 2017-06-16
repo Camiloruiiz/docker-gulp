@@ -6,8 +6,7 @@ volumes:
 
 services:  
   web:
-    build: ./
-    image: gulp:myapp    
+    image: camiloruiiz/docker-gulp:latest    
     container_name: gulp-web
     ports: 
       - "3000:3000"
