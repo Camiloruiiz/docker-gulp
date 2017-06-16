@@ -20,10 +20,4 @@ RUN chmod +x /startup.sh
 
 WORKDIR /opt
 
-#RUN mkdir /app
-
-#RUN npm install
-
-#VOLUME /opt
-
 CMD ["/bin/sh", "/startup.sh"]
