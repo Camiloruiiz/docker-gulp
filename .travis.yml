@@ -9,3 +9,7 @@ before_install:
 
 script:
     - docker run -d -v $(pwd):/opt camiloruiiz/gulp:latest
+
+after_success:
+    - cd ../ci
+    - sh ./deploy.sh
