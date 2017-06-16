@@ -14,7 +14,6 @@ RUN set -x \
         tar
 
 RUN npm install gulp-cli -g
-
 ADD startup.sh /
 RUN chmod +x /startup.sh
 
